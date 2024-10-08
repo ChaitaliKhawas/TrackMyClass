@@ -1,0 +1,29 @@
+ <button (click)="getApiPosts()">Get Api Posts</button>
+
+<h4>List of Posts</h4>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Tags</th>
+            <th>Likes</th>
+            <th>Dislikes</th>
+
+        </tr>
+    </thead>
+    <tbody *ngFor="let p of allPost">
+        <tr>
+            <td> {{p.id}} </td>
+            <td> {{p.title}} </td>
+            <td> {{p.body}} </td>
+            <td> {{p.tags?.join(',')}} </td>
+            <td> {{p.reactions.likes}} </td>
+            <td> {{p.reactions?.dislikes}} </td>
+
+        </tr>
+
+    </tbody>
+    
+</table>
